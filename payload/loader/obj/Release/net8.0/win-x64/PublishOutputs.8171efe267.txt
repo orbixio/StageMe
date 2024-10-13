@@ -1,2 +1,0 @@
-C:\Users\Orbixio\Desktop\StageMe\payload\loader\bin\Release\net8.0\win-x64\publish\loader.pdb
-C:\Users\Orbixio\Desktop\StageMe\payload\loader\bin\Release\net8.0\win-x64\publish\loader.exe
