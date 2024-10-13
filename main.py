@@ -40,14 +40,6 @@ def main():
         help="Specify the port the server will listen on (default: 8080).",
     )
     parser.add_argument(
-        "-t",
-        "--type",
-        metavar="type",
-        type=str,
-        default="exe",
-        help="The file type of payload (supported: exe, bin).",
-    )
-    parser.add_argument(
         "--install", action="store_true", help="Install needed tools & modules"
     )
 
@@ -60,7 +52,6 @@ def main():
 
     # Get the options from arguments
     payload_file = args.payload
-    payload_type = args.type
     port = args.port
     host = args.host
 
@@ -86,13 +77,8 @@ def main():
     except FileExistsError:
         pass
     
-    if payload_type == "exe":
-        # Convert payload (executable) to shellcode
-        to_bin(payload_file)
-    elif payload_type == "bin":
-        pass
-    else:
-        print(Fore.RED + f"[#] Payload type {payload_type} is not supported.")
+    # Convert payload (executable) to shellcode
+    to_bin(payload_file)
 
     # Convert shellcode to hex & write it to a file
     print(f"[i] Converting shellcode to hex... ", end="")
